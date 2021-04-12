@@ -27,6 +27,11 @@ public class HUD {
         g.drawRect(15, 15, 200, 32);
         g.setColor(Color.blue);
         g.drawString("Score: " + score, 10, 64);
+
+        if(Player.finish) {
+            g.setColor(Color.white);
+            g.drawString("You Lose, Score : " + score, Game.WIDTH/2 - 32, Game.HEIGHT/2 - 32);
+        }
     }
 
     public void addScore(int x) {

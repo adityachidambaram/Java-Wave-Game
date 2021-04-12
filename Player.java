@@ -5,6 +5,7 @@ import java.awt.Color;
 public class Player extends GameObject{
     Handler handler;
     public static int scoreCount = 0;
+    public static boolean finish = false;
 
     public Player(int x, int y, ID id, Handler handler) {
         super(x, y, id);
@@ -53,8 +54,12 @@ public class Player extends GameObject{
 
     private void stopAll() {
         for(int i = 0; i < handler.object.size(); i++) {
-            if(handler.object.get(i).getId() != ID.Player)
+            GameObject tempObject = handler.object.get(i);
+            if(tempObject.getId() != ID.Player)
                 handler.object.remove(i);
+        }
+        if(handler.object.size() == 1) {
+            finish = true;
         }
     }
 
