@@ -7,6 +7,7 @@ public class HUD {
     private int greenValue = 255;
     public static int score = 0;
     public static int healthRefill = 0;
+    public static boolean clicked = false;
 
     public void tick() {
         health = Game.clamp(health, 0, 100);
@@ -32,7 +33,6 @@ public class HUD {
             g.setColor(Color.white);
             g.drawString("You Lose, Score : " + score, Game.WIDTH/2 - 64, Game.HEIGHT/2 - 32);
             g.drawString("Wave by Aditya Chidambaram", Game.WIDTH/2 - 90, 64);
-            
         }
     }
 
