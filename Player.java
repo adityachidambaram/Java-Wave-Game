@@ -36,8 +36,8 @@ public class Player extends GameObject{
             if(tempObject.getId() == ID.BasicEnemy) {
                 if(getBounds().intersects(tempObject.getBounds())) {
                     HUD.health -= 2;
-                    if(HUD.health <= 0)
-                        System.exit(1);
+                    //if(HUD.health <= 0)
+                        //System.exit(1);
                 }
             }
             if(tempObject.getId() == ID.Coin) {

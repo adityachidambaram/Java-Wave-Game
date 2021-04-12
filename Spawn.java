@@ -11,8 +11,13 @@ public class Spawn {
     }
     public void tick() {
         if(Player.scoreCount == 1) {
+            int xCoord = (int)(Math.random()*(Game.WIDTH - 200)) + 100;
+            int yCoord = (int)(Math.random()*(Game.HEIGHT - 200)) + 100;
+
+
             handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH), r.nextInt(Game.HEIGHT), ID.BasicEnemy));
-            handler.addObject(new Coin((int)(Math.random()*Game.WIDTH - 100) + 100, (int)(Math.random()*Game.HEIGHT - 100) + 100, ID.Coin));
+            handler.addObject(new Coin(xCoord, yCoord, ID.Coin));
+            System.out.println(xCoord + "," + yCoord);
             Player.scoreCount = 0;
         }
     }

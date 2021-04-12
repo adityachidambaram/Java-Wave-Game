@@ -31,7 +31,10 @@ public class Game extends Canvas implements Runnable{
         r = new Random();
 
         handler.addObject(new Player(WIDTH/2 - 32, HEIGHT/2-32, ID.Player, handler));
-        handler.addObject(new Coin((int)(Math.random()*WIDTH - 100) + 100, (int)(Math.random()*HEIGHT - 100) + 100, ID.Coin));
+
+        int xCoord = (int)(Math.random()*(Game.WIDTH - 200)) + 100;
+        int yCoord = (int)(Math.random()*(Game.HEIGHT - 200)) + 100;
+        handler.addObject(new Coin(xCoord, yCoord, ID.Coin));
         for(int i = 0; i < 5; i++)
             handler.addObject(new BasicEnemy((int)(Math.random()*WIDTH - 50) + 50, (int)(Math.random()*HEIGHT - 50) + 50, ID.BasicEnemy));
     }
