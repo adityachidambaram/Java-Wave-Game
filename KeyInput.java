@@ -40,6 +40,10 @@ public class KeyInput extends KeyAdapter{
         if(key == KeyEvent.VK_ESCAPE) {
             System.exit(1);
         }
+        if(Player.finish)
+            if(key == KeyEvent.VK_X) {
+                new Game();
+            }   
                 
 
     }
