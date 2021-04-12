@@ -30,7 +30,9 @@ public class HUD {
 
         if(Player.finish) {
             g.setColor(Color.white);
-            g.drawString("You Lose, Score : " + score, Game.WIDTH/2 - 32, Game.HEIGHT/2 - 32);
+            g.drawString("You Lose, Score : " + score, Game.WIDTH/2 - 64, Game.HEIGHT/2 - 32);
+            g.drawString("Wave by Aditya Chidambaram", Game.WIDTH/2 - 90, 64);
+            
         }
     }
 
