@@ -19,6 +19,6 @@ public class Spawn {
             handler.addObject(new Coin(xCoord, yCoord, ID.Coin));
             System.out.println(xCoord + "," + yCoord);
             Player.scoreCount = 0;
-        }
+        }   
     }
 }

@@ -15,9 +15,10 @@ public class HUD {
 
         greenValue = health*2;
 
-        if(healthRefill % 5 == 0) {
+        if(healthRefill % 10 == 0) {
             health = 100;
         }
+        
     }
     public void render(Graphics g) {
         g.setColor(Color.gray);
@@ -33,7 +34,7 @@ public class HUD {
             g.setColor(Color.white);
             g.drawString("You Lose, Score : " + score, Game.WIDTH/2 - 64, Game.HEIGHT/2 - 32);
             g.drawString("Wave by Aditya Chidambaram", Game.WIDTH/2 - 90, 64);
-            g.drawString("Click X to continue", Game.WIDTH/2 - 64, Game.HEIGHT/2);
+            g.drawString("CLICK ESCAPE TO EXIT", Game.WIDTH/2 - 70, Game.HEIGHT/2);
         }
     }
 

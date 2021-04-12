@@ -6,6 +6,7 @@ public class Player extends GameObject{
     Handler handler;
     public static int scoreCount = 0;
     public static boolean finish = false;
+    public static boolean newLevel = false;
 
     public Player(int x, int y, ID id, Handler handler) {
         super(x, y, id);
@@ -64,7 +65,5 @@ public class Player extends GameObject{
             finish = true;
         }
     }
-
-    
-    
+       
 }
