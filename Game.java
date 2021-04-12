@@ -119,5 +119,7 @@ public class Game extends Canvas implements Runnable{
         else {
             return var;
         }
+
+
     }
 }

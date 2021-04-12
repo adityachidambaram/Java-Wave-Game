@@ -36,17 +36,25 @@ public class Player extends GameObject{
             if(tempObject.getId() == ID.BasicEnemy) {
                 if(getBounds().intersects(tempObject.getBounds())) {
                     HUD.health -= 2;
-                    //if(HUD.health <= 0)
-                        //System.exit(1);
+                    if(HUD.health <= 0)
+                        stopAll();
                 }
             }
             if(tempObject.getId() == ID.Coin) {
                 if(getBounds().intersects(tempObject.getBounds())) {
                     HUD.score += 1;
+                    HUD.healthRefill++;
                     scoreCount++;
                     handler.object.remove(tempObject);
                 }
             }
+        }
+    }
+
+    private void stopAll() {
+        for(int i = 0; i < handler.object.size(); i++) {
+            if(handler.object.get(i).getId() != ID.Player)
+                handler.object.remove(i);
         }
     }
 

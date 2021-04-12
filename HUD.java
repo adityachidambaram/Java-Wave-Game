@@ -6,12 +6,17 @@ public class HUD {
     public static int health = 100;
     private int greenValue = 255;
     public static int score = 0;
+    public static int healthRefill = 0;
 
     public void tick() {
         health = Game.clamp(health, 0, 100);
         greenValue = Game.clamp(greenValue, 0, 255);
 
         greenValue = health*2;
+
+        if(healthRefill % 5 == 0) {
+            health = 100;
+        }
     }
     public void render(Graphics g) {
         g.setColor(Color.gray);
