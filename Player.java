@@ -20,6 +20,8 @@ public class Player extends GameObject{
         y = Game.clamp(y, 0, Game.HEIGHT - 60);
 
         collision();
+        if(HUD.health == 0)
+            stopAll();
     }
 
     public void render(Graphics g) {
@@ -37,8 +39,6 @@ public class Player extends GameObject{
             if(tempObject.getId() == ID.BasicEnemy) {
                 if(getBounds().intersects(tempObject.getBounds())) {
                     HUD.health -= 2;
-                    if(HUD.health <= 0)
-                        stopAll();
                 }
             }
             if(tempObject.getId() == ID.Coin) {
@@ -52,10 +52,12 @@ public class Player extends GameObject{
         }
     }
 
-    private void stopAll() {
+    public void stopAll() {
         for(int i = 0; i < handler.object.size(); i++) {
             GameObject tempObject = handler.object.get(i);
-            if(tempObject.getId() != ID.Player)
+            if(tempObject.getId() == ID.Coin)
+                handler.object.remove(i);
+            if(tempObject.getId() == ID.BasicEnemy)
                 handler.object.remove(i);
         }
         if(handler.object.size() == 1) {
